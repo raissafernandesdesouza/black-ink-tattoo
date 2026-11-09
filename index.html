@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Black Ink Tattoo Studio, com Clarissa em Carmo de Minas. Um atendimento cuidadoso para transformar sua ideia em tatuagem."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+    <title>Black Ink Tattoo Studio | Clarissa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --paper: #171717;
+        --paper-deep: #222222;
+        --ink: #f1efed;
+        --muted: #b3afad;
+        --red: #d34b3e;
+        --green: #c1aaa4;
+        --line: rgba(241, 239, 237, 0.18);
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "DM Sans", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1440px;
+        min-height: 84px;
+        margin: 0 auto;
+        padding: 0 7.2%;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .wordmark {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .wordmark-mark {
+        display: grid;
+        width: 35px;
+        height: 35px;
+        place-items: center;
+        border: 1px solid var(--red);
+        border-radius: 50%;
+        color: var(--red);
+        font-family: var(--serif);
+        font-size: 19px;
+        font-style: italic;
+      }
+
+      .wordmark-text {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.15px;
+        line-height: 1.35;
+        text-transform: uppercase;
+      }
+
+      .wordmark-text span {
+        display: block;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 1.6px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, 3.2vw, 48px);
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        text-decoration: none;
+      }
+
+      .nav-links a:not(.nav-cta):hover,
+      .footer-links a:hover {
+        color: var(--red);
+      }
+
+      .nav-cta,
+      .button-primary {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        gap: 13px;
+        padding: 0 20px;
+        background: var(--red);
+        color: #fffaf1;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 180ms ease, transform 180ms ease;
+      }
+
+      .nav-cta:hover,
+      .button-primary:hover {
+        transform: translateY(-2px);
+        background: #ad382f;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: min(720px, calc(100svh - 84px));
+        grid-template-columns: 1fr 0.88fr;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 46px 7.2% 54px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 30px 0 58px;
+        animation: arrive 700ms both;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin: 0 0 25px;
+        color: var(--green);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 29px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 640px;
+        margin-bottom: 22px;
+        font-family: var(--serif);
+        font-size: clamp(54px, 6.25vw, 88px);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 0.99;
+      }
+
+      h1 em {
+        color: var(--red);
+        font-weight: 500;
+      }
+
+      .hero-description {
+        max-width: 395px;
+        margin-bottom: 30px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin-top: 53px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .rating-stars {
+        color: var(--red);
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+
+      .hero-visual {
+        position: relative;
+        display: flex;
+        min-height: 495px;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 5% 0 0;
+        animation: arrive 850ms 100ms both;
+      }
+
+      .hero-image-frame {
+        position: relative;
+        width: min(100%, 430px);
+        height: min(70vh, 570px);
+        min-height: 470px;
+      }
+
+      .hero-image-frame::before {
+        position: absolute;
+        top: 17px;
+        right: -17px;
+        bottom: -17px;
+        left: 17px;
+        border: 1px solid var(--red);
+        content: "";
+      }
+
+      .hero-image-frame img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .image-note {
+        position: absolute;
+        right: -31px;
+        bottom: 30px;
+        padding: 12px 17px;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 15px;
+        font-style: italic;
+      }
+
+      .hero-index {
+        position: absolute;
+        bottom: 33px;
+        left: 7.2%;
+        color: var(--muted);
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .section-rule {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: var(--red);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .section-rule::after {
+        width: 42px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      .about {
+        position: relative;
+        overflow: hidden;
+        padding: 110px 7.2% 114px;
+        background-color: var(--paper-deep);
+        background-image: radial-gradient(rgba(241, 239, 237, 0.065) 0.55px, transparent 0.55px);
+        background-size: 7px 7px;
+      }
+
+      .about-inner {
+        display: grid;
+        max-width: 1150px;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 11%;
+        margin: 0 auto;
+      }
+
+      .about h2,
+      .gallery h2,
+      .contact h2 {
+        margin: 20px 0 0;
+        font-family: var(--serif);
+        font-size: clamp(37px, 4.4vw, 58px);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.12;
+      }
+
+      .about h2 em {
+        color: var(--green);
+        font-weight: 500;
+      }
+
+      .about-copy {
+        padding-top: 30px;
+      }
+
+      .about-copy p {
+        max-width: 545px;
+        margin-bottom: 18px;
+        color: #d0ccca;
+        font-size: 14px;
+        line-height: 1.9;
+      }
+
+      .about-signature {
+        margin-top: 26px;
+        color: var(--red);
+        font-family: var(--serif);
+        font-size: 25px;
+        font-style: italic;
+      }
+
+      .gallery {
+        padding: 107px 7.2% 118px;
+      }
+
+      .gallery-heading {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        max-width: 1150px;
+        margin: 0 auto 38px;
+      }
+
+      .gallery h2 {
+        margin-top: 16px;
+      }
+
+      .gallery-heading p {
+        max-width: 280px;
+        margin: 0 0 6px 24px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      .gallery-grid {
+        display: grid;
+        max-width: 1150px;
+        grid-template-columns: 1.05fr 0.95fr 0.95fr;
+        gap: 18px;
+        margin: 0 auto;
+      }
+
+      .gallery-item {
+        position: relative;
+        min-width: 0;
+        margin: 0;
+        overflow: hidden;
+        background: var(--paper-deep);
+      }
+
+      .gallery-item:nth-child(1) {
+        height: 390px;
+      }
+
+      .gallery-item:nth-child(2) {
+        height: 330px;
+        margin-top: 60px;
+      }
+
+      .gallery-item:nth-child(3) {
+        height: 390px;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 450ms ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.035);
+      }
+
+      .gallery-detail img {
+        object-position: center 42%;
+        transform: scale(1.12);
+      }
+
+      .gallery-detail:hover img {
+        transform: scale(1.16);
+      }
+
+      .gallery-item figcaption {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 33px 16px 15px;
+        background: linear-gradient(transparent, rgba(20, 22, 20, 0.72));
+        color: #fffaf1;
+        font-size: 10px;
+        letter-spacing: 0.7px;
+      }
+
+      .review {
+        display: grid;
+        grid-template-columns: 0.65fr 1.35fr;
+        gap: 9%;
+        padding: 84px 12%;
+        background: #2b2b2b;
+        color: var(--ink);
+      }
+
+      .review-meta {
+        align-self: center;
+      }
+
+      .review .section-rule {
+        color: #ef9b91;
+      }
+
+      .review-score {
+        margin: 24px 0 4px;
+        font-family: var(--serif);
+        font-size: 61px;
+        line-height: 1;
+      }
+
+      .review-score span {
+        color: #e3b2a1;
+        font-size: 16px;
+      }
+
+      .review-meta p:last-child {
+        margin-bottom: 0;
+        color: #c1bcba;
+        font-size: 11px;
+      }
+
+      blockquote {
+        align-self: center;
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(22px, 2.7vw, 34px);
+        line-height: 1.5;
+      }
+
+      blockquote footer {
+        margin-top: 24px;
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .contact {
+        padding: 108px 7.2% 100px;
+      }
+
+      .contact-inner {
+        display: grid;
+        max-width: 1150px;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 12%;
+        margin: 0 auto;
+      }
+
+      .contact-intro > p:last-child {
+        max-width: 360px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .contact-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 30px;
+        padding-top: 17px;
+      }
+
+      .detail {
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      .detail h3 {
+        margin-bottom: 9px;
+        color: var(--green);
+        font-size: 10px;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+
+      .detail p,
+      .detail a {
+        margin-bottom: 0;
+        font-size: 12px;
+        line-height: 1.75;
+        text-decoration: none;
+      }
+
+      .detail a:hover {
+        color: var(--red);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .contact-action {
+        grid-column: 1 / -1;
+        justify-self: start;
+        margin-top: 3px;
+      }
+
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 7.2%;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 22px;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+      }
+
+      @keyframes arrive {
+        from {
+          opacity: 0;
+          transform: translateY(13px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .site-header {
+          min-height: 72px;
+          padding: 0 6%;
+        }
+
+        .menu-toggle {
+          display: grid;
+          place-items: center;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: calc(100% - 1px);
+          right: 0;
+          left: 0;
+          display: none;
+          align-items: stretch;
+          gap: 0;
+          padding: 8px 6% 20px;
+          border-bottom: 1px solid var(--line);
+          background: var(--paper);
+        }
+
+        .nav-links.is-open {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .nav-links a:not(.nav-cta) {
+          padding: 13px 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .nav-links .nav-cta {
+          margin-top: 14px;
+        }
+
+        .hero {
+          min-height: unset;
+          grid-template-columns: 1fr 0.83fr;
+          padding: 42px 6% 66px;
+        }
+
+        h1 {
+          font-size: clamp(48px, 8vw, 66px);
+        }
+
+        .hero-visual {
+          min-height: 420px;
+          padding-right: 5%;
+        }
+
+        .hero-image-frame {
+          height: 470px;
+          min-height: unset;
+        }
+
+        .hero-index {
+          left: 6%;
+        }
+
+        .about,
+        .gallery,
+        .contact {
+          padding-right: 6%;
+          padding-left: 6%;
+        }
+
+        .about-inner {
+          gap: 7%;
+        }
+
+        .gallery-item:nth-child(1),
+        .gallery-item:nth-child(3) {
+          height: 320px;
+        }
+
+        .gallery-item:nth-child(2) {
+          height: 280px;
+          margin-top: 40px;
+        }
+
+        .review {
+          padding-right: 8%;
+          padding-left: 8%;
+        }
+
+        .contact-inner {
+          gap: 7%;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding-top: 46px;
+          padding-bottom: 64px;
+        }
+
+        .hero-copy {
+          padding: 10px 0 32px;
+        }
+
+        .eyebrow {
+          margin-bottom: 19px;
+        }
+
+        h1 {
+          max-width: 420px;
+          font-size: clamp(54px, 15vw, 76px);
+        }
+
+        .hero-description {
+          max-width: 340px;
+          font-size: 14px;
+        }
+
+        .rating {
+          margin-top: 30px;
+        }
+
+        .hero-visual {
+          min-height: 0;
+          justify-content: center;
+          padding: 8px 7% 18px 0;
+        }
+
+        .hero-image-frame {
+          width: 100%;
+          height: min(115vw, 450px);
+        }
+
+        .hero-index {
+          bottom: 26px;
+        }
+
+        .about {
+          padding-top: 76px;
+          padding-bottom: 76px;
+        }
+
+        .about-inner,
+        .contact-inner {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .about-copy {
+          padding-top: 4px;
+        }
+
+        .gallery {
+          padding-top: 76px;
+          padding-bottom: 80px;
+        }
+
+        .gallery-heading {
+          display: block;
+          margin-bottom: 26px;
+        }
+
+        .gallery-heading p {
+          margin: 15px 0 0;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+
+        .gallery-item:nth-child(1) {
+          height: 290px;
+        }
+
+        .gallery-item:nth-child(2) {
+          height: 250px;
+          margin-top: 36px;
+        }
+
+        .gallery-item:nth-child(3) {
+          height: 250px;
+          margin-top: -28px;
+        }
+
+        .review {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          padding: 62px 8%;
+        }
+
+        .review-score {
+          font-size: 52px;
+        }
+
+        blockquote {
+          font-size: 25px;
+        }
+
+        .contact {
+          padding-top: 76px;
+          padding-bottom: 72px;
+        }
+
+        .contact-details {
+          gap: 23px 18px;
+          padding-top: 12px;
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 19px 6%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Black Ink Tattoo Studio, inicio">
+        <span class="wordmark-mark" aria-hidden="true">B</span>
+        <span class="wordmark-text">Black Ink<span>Tattoo Studio</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="Navegação principal">
+        <a href="#sobre">A artista</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#avaliacao">Avaliações</a>
+        <a class="nav-cta" href="https://wa.me/5535991988968?text=Ola%2C%20Clarissa!%20Quero%20conversar%20sobre%20uma%20tatuagem.">Agendar conversa <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Carmo de Minas, MG</p>
+          <h1 id="hero-title">Sua ideia.<br />Um traço <em>só seu.</em></h1>
+          <p class="hero-description">Tatuagem feita com escuta, cuidado e atenção a cada detalhe. Vamos conversar sobre a sua?</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="https://wa.me/5535991988968?text=Ola%2C%20Clarissa!%20Quero%20conversar%20sobre%20uma%20tatuagem.">Fale com a Clarissa <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#trabalhos">Ver trabalhos <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="rating" aria-label="Nota 5 de 5, com 2 avaliações no Google">
+            <span class="rating-stars" aria-hidden="true">★★★★★</span>
+            <span><strong>5,0</strong> no Google · 2 avaliações</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qo6qAgqG2ynTJEoij4exZjK9B-m4KqARd-GfdhI4RYwgiqODWKBq-pGHhAiEHzWrJefid8BuDZ-KB8Bav1LaDI6mkdFtDVVa2um94zGK5GCKKlrHppkkVsgnbE5_aVlEm6KjMKlUF8hr8=w224-h398-k-no"
+              alt="Foto do perfil do Black Ink Tattoo Studio"
+              fetchpriority="high"
+            />
+            <span class="image-note">Feito com cuidado, por Clarissa</span>
+          </div>
+        </div>
+        <span class="hero-index">Black Ink · 01 / 04</span>
+      </section>
+
+      <section class="about" id="sobre" aria-labelledby="about-title">
+        <div class="about-inner">
+          <div>
+            <p class="section-rule">Um espaço seu</p>
+            <h2 id="about-title">Sua história merece ser <em>bem cuidada.</em></h2>
+          </div>
+          <div class="about-copy">
+            <p>No Black Ink Tattoo Studio, a conversa vem antes da tinta. Clarissa recebe cada ideia com atenção para criar uma experiência tranquila, acolhedora e feita no seu tempo.</p>
+            <p>O estúdio fica em Carmo de Minas e acolhe a comunidade LGBTQ+. Traga sua referência, sua dúvida ou apenas o começo de uma ideia.</p>
+            <p class="about-signature">Clarissa</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery" id="trabalhos" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="section-rule">Do estúdio</p>
+            <h2 id="gallery-title">Na pele, com intenção.</h2>
+          </div>
+          <p>Um pouco do Black Ink Tattoo Studio, em fotos compartilhadas pelo estúdio.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QcXeMHT643BeCJet1-x4w5aq2aUGoUZTC68s8qSb5c1mGpj3m-FJTO9xbn38XvCRIFdXTo1PlJfbebCXEgcz4lH4bgiahOp0EZOF0NvGs5Bu2aR5mRnwi6Ta4UBvFVoL_IJ8tavA=w224-h398-k-no"
+              alt="Foto do Black Ink Tattoo Studio"
+              loading="lazy"
+            />
+            <figcaption>Black Ink Tattoo Studio</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-detail">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QcXeMHT643BeCJet1-x4w5aq2aUGoUZTC68s8qSb5c1mGpj3m-FJTO9xbn38XvCRIFdXTo1PlJfbebCXEgcz4lH4bgiahOp0EZOF0NvGs5Bu2aR5mRnwi6Ta4UBvFVoL_IJ8tavA=w224-h398-k-no"
+              alt="Detalhe de tatuagem fotografada no estúdio"
+              loading="lazy"
+            />
+            <figcaption>Detalhe do trabalho</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qo6qAgqG2ynTJEoij4exZjK9B-m4KqARd-GfdhI4RYwgiqODWKBq-pGHhAiEHzWrJefid8BuDZ-KB8Bav1LaDI6mkdFtDVVa2um94zGK5GCKKlrHppkkVsgnbE5_aVlEm6KjMKlUF8hr8=w224-h398-k-no"
+              alt="Foto compartilhada pelo proprietário do estúdio"
+              loading="lazy"
+            />
+            <figcaption>Do proprietário</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="review" id="avaliacao" aria-label="Avaliação de cliente">
+        <div class="review-meta">
+          <p class="section-rule">Quem já viveu</p>
+          <p class="review-score">5,0 <span>/ 5</span></p>
+          <p>Nota no Google · 2 avaliações</p>
+        </div>
+        <blockquote>
+          “O atendimento da Clarissa é ótimo e o ambiente lindo e agradável. Minhas tatuagens ficaram perfeitas! O traço bem preciso e a cicatrização foi a melhor que eu tive.”
+          <footer>Ana Virgínia · avaliação no Google</footer>
+        </blockquote>
+      </section>
+
+      <section class="contact" id="contato" aria-labelledby="contact-title">
+        <div class="contact-inner">
+          <div class="contact-intro">
+            <p class="section-rule">Vamos conversar?</p>
+            <h2 id="contact-title">A próxima ideia pode ser sua.</h2>
+            <p>Conte para a Clarissa o que você está imaginando. O primeiro passo é uma boa conversa.</p>
+          </div>
+          <div class="contact-details">
+            <div class="detail">
+              <h3>Endereço</h3>
+              <p>R. Rubi, 18 - Jardim Nhá Chica<br />Carmo de Minas - MG, 37472-000</p>
+            </div>
+            <div class="detail">
+              <h3>Telefone</h3>
+              <a href="tel:+5535991988968">(35) 99198-8968</a>
+            </div>
+            <div class="detail">
+              <h3>Instagram</h3>
+              <a href="https://instagram.com/clarissa.tattoo" target="_blank" rel="noreferrer">@clarissa.tattoo ↗</a>
+            </div>
+            <div class="detail">
+              <h3>Localização</h3>
+              <a href="https://maps.google.com/?q=R.+Rubi,+18,+Jardim+Nha+Chica,+Carmo+de+Minas+-+MG" target="_blank" rel="noreferrer">Abrir no Google Maps ↗</a>
+            </div>
+            <a class="button-primary contact-action" href="https://wa.me/5535991988968?text=Ola%2C%20Clarissa!%20Quero%20conversar%20sobre%20uma%20tatuagem.">Chamar no WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Black Ink Tattoo Studio · Carmo de Minas, MG</span>
+      <div class="footer-links">
+        <a href="https://instagram.com/clarissa.tattoo" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://maps.google.com/?q=R.+Rubi,+18,+Jardim+Nha+Chica,+Carmo+de+Minas+-+MG" target="_blank" rel="noreferrer">Como chegar</a>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const siteNav = document.querySelector("#site-nav");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Abrir menu" : "Fechar menu");
+        siteNav.classList.toggle("is-open", !isOpen);
+      });
+
+      siteNav.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Abrir menu");
+          siteNav.classList.remove("is-open");
+        }
+      });
+    </script>
+  </body>
+</html>
